@@ -1,0 +1,48 @@
+<html>
+    {% load static %}
+    
+    <title>
+        Hodir|Your number one restaurant directory
+        </title>
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{%static "style.css"%}" >
+<head>
+<nav>
+    <h3> Hodir</h3>
+    <ul>
+        <li> Home</li>
+        <li> About</li>
+        <li> Bookings</li>
+        <li> Contact</li>
+
+    </ul>
+</nav>
+</head>
+<body>
+    <div class="hero_section">
+       
+    
+     {% block content %}
+
+    
+
+
+<form method="GET" action="{% url 'search_restaurants' %}">
+    <div class = "content">
+            <input type="text" name="q" placeholder="Search restaurants" value="{{ query }}"></input>
+            <button type="submit"> <i class='bx bx-search'></i> </button>
+            </div>
+        </form>
+  
+       
+
+        
+
+         
+    
+   {% endblock %}
+    
+    </div>
+    
+</body>
+</html>

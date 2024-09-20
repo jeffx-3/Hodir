@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    width: 100%;
+    background:rgb(7, 131, 247);
+    padding: 10px;
+    position: fixed;
+ 
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+
+}
+nav ul li{
+    list-style: none;
+    
+}
+/*Hero section styling*/
+.hero_section{
+    display: flex;
+    background: url(images/dinner-table-with-foods-soft-drinks-restaurant.jpg);
+    align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    justify-content: center;
+    gap: 0.1rem;
+
+}
+form .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+form{
+    display: flex;
+}
+
+input{
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    border-style:none;
+    margin: 0 auto; 
+    border-radius: 15px; 
+    font-size: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+input::placeholder {
+    color: white;
+    font-size: 20px; 
+}
+button{
+    margin-left: 10px;
+    border-left: none;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(68, 243, 24, 0.5);
+}

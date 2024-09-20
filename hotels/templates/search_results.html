@@ -1,0 +1,17 @@
+{% block content %}
+    <h2>Search Results</h2>
+    {% if query %}
+        <p>Results for: "{{ query }}"</p>
+        {% if results %}
+            <ul>
+                {% for restaurant in restaurant %}
+                    <li><a href="{% url 'search_restaurants' restaurant.name%}">{{ restaurant.name }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found,perhaps the restaurant isn't in our directory yet</p>
+        {% endif %}
+    {% else %}
+        <p>Please enter a search term.</p>
+    {% endif %}
+{% endblock %}
