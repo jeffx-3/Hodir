@@ -4,9 +4,7 @@ from .models import restaurant
 def home(request):
     return render(request, 'hotels/templates/home.html')
 
-
-
-
+##search view
 def search_restaurants(request):
     query = request.GET.get('q')  # Get the search term from the query parameters
     if query:

@@ -10,10 +10,10 @@
 <nav>
     <h3> Hodir</h3>
     <ul>
-        <li> Home</li>
-        <li> About</li>
-        <li> Bookings</li>
-        <li> Contact</li>
+        <li> <a href="#">Home</a></li>
+        <li> <a href="#about">About</a></li>
+        <li> <a href="#about">Contact</a></li>
+        <li> </li>
 
     </ul>
 </nav>
@@ -24,24 +24,22 @@
     
      {% block content %}
 
-    
-
-
 <form method="GET" action="{% url 'search_restaurants' %}">
     <div class = "content">
-            <input type="text" name="q" placeholder="Search restaurants" value="{{ query }}"></input>
+            <input type="text" name="q" placeholder="Search restaurants by name or location" value="{{ query }}"></input>
             <button type="submit"> <i class='bx bx-search'></i> </button>
             </div>
         </form>
   
-       
-
-        
-
-         
-    
    {% endblock %}
     
+    </div>
+    <div class="title">
+        <h2>What is Hodir?</h2>
+    </div>
+    <div class="about" id="about">
+<img src="{%static 'images/toa-heftiba-6bKpHAun4d8-unsplash.jpg'%}">
+<p>{% lorem 2 b random %} </p>
     </div>
     
 </body>
