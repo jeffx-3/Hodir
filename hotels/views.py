@@ -6,7 +6,7 @@ def home(request):
 
 ##search view
 def search_restaurants(request):
-    query = request.GET.get('q')  # Get the search term from the query parameters
+    query = request.GET.get('q', '')  # Get the search term from the query parameters
     if query:
         results = restaurant.objects.filter(name__icontains=query) | restaurant.objects.filter(id__icontains=query)
         ##print("Found {results.count()} results")
@@ -17,4 +17,5 @@ def search_restaurants(request):
         'results': results,
         'query': query,
     }
+    
     return render(request, 'search_results.html', context)

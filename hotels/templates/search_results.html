@@ -4,8 +4,9 @@
         <p>Results for: "{{ query }}"</p>
         {% if results %}
             <ul>
-                {% for restaurant in restaurant %}
+                {% for restaurant in restaurants%}
                     <li><a href="{% url 'search_restaurants' restaurant.name%}">{{ restaurant.name }}</a></li>
+                    <p>{{ restaurant.name}}</p>
                 {% endfor %}
             </ul>
         {% else %}
