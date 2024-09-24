@@ -12,12 +12,16 @@ class Service(Restaurant):
     service_name = models.CharField(max_length=20)
     service_price = models.IntegerField(null=True)
     
+    def __str__(self):
+        return self.service_name
+    
 class Food(Restaurant):
     food_name =models.CharField(max_length=20)
     food_photo = models.ImageField(upload_to='images/')
     food_price = models.IntegerField(null=True)
     
-    
+    def __str__(self):
+        return self.food_name
     
     
 class Meta:
