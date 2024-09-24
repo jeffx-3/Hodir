@@ -1,10 +1,27 @@
 from django.db import models
 
 # Create your models here.
-class restaurant(models.Model):
+class Restaurant(models.Model):
     name = models.CharField(max_length=30)
     photo =models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.name
    
+class Service(Restaurant):
+    service_name = models.CharField(max_length=20)
+    service_price = models.IntegerField(null=True)
+    
+class Food(Restaurant):
+    food_name =models.CharField(max_length=20)
+    food_photo = models.ImageField(upload_to='images/')
+    food_price = models.IntegerField(null=True)
+    
+    
+    
+    
+class Meta:
+     ordering = ['-name']
+     indexes =[
+     models.Index(fields=['-name']),
+     ]

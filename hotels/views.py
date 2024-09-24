@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import restaurant
+from .models import Restaurant
 # Create your views here.
 def home(request):
     return render(request, 'hotels/templates/home.html')
@@ -8,10 +8,9 @@ def home(request):
 def search_restaurants(request):
     query = request.GET.get('q', '')  # Get the search term from the query parameters
     if query:
-        results = restaurant.objects.filter(name__icontains=query) | restaurant.objects.filter(id__icontains=query)
-        ##print("Found {results.count()} results")
+        results = Restaurant.objects.filter(name__icontains=query)
     else:
-        results = restaurant.objects.none()  # No search results if no query
+        results = Restaurant.objects.none()  # No search results if no query
     
     context = {
         'results': results,
