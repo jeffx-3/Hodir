@@ -7,8 +7,10 @@
             <ul>
                 {% for Restaurant in Restaurants%}
                 {{restaurant}}
-                    <li><a href="{% url 'search_restaurants' Restaurant.name%}">{{ Restaurant.name }}</a></li>
+                     <li><a href="{% url 'search_restaurants' Restaurant.name%}">{{ Restaurant.name }}</a></li>
                     <p>{{ Restaurant.name }}</p>
+
+        
                 {% endfor %}
             </ul>
         {% else %}
